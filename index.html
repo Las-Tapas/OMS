@@ -1,11 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Management System</title>
+    <title>Order Management - Las Tapas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Welkom bij Las Tapas - Order Management Systeem</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Bestellingen Overzicht</a></li>
+            <li><a href="#">Nieuwe Bestelling</a></li>
+            <li><a href="#">Menu Beheren</a></li>
+            <li><a href="#">Uitloggen</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="orders-section">
+            <h2>Recente Bestellingen</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bestelnummer</th>
+                        <th>Tafelnummer</th>
+                        <th>Gerechten</th>
+                        <th>Status</th>
+                        <th>Acties</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>5</td>
+                        <td>Patatas Bravas, Paella</td>
+                        <td>In behandeling</td>
+                        <td><button>Markeer als Gereed</button></td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>3</td>
+                        <td>Gambas, Croquetas</td>
+                        <td>Gereed</td>
+                        <td><button>Details</button></td>
+                    </tr>
+                    <!-- Voeg meer bestellingen toe -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Las Tapas Restaurant</p>
+    </footer>
 </body>
 </html>
