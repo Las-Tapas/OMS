@@ -105,7 +105,7 @@ footer {
     padding: 10px;
     background-color: #5bc0de;
     color: white;
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100%;
 }
