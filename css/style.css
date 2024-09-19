@@ -1,201 +1,170 @@
-/* Algemene stijlen voor het gehele project */
+/* Basis CSS voor een schone en mooie lay-out */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
+/* Header en navbar */
 header {
-    background-color: #d9534f;
+    position: relative;
+    background: url('../images/banner.png') no-repeat center center;
+    background-size: cover;
+    height: 400px; /* Of een andere hoogte die je geschikt vindt */
     color: white;
-    padding: 20px;
-    text-align: center;
 }
 
-h1, h2, h3 {
-    color: #d9534f;
-}
-
-p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    background-color: #f9f9f9;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Zorgt ervoor dat de logo links staat en de nav in het midden */
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparante achtergrond voor leesbaarheid */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Witte rand onder de navbar */
+    z-index: 10; /* Zorgt ervoor dat de navbar boven de header-tekst ligt */
+}
+
+.logo {
+    height: 60px;
+    margin-right: 20px; /* Ruimte tussen logo en navigatie */
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
     align-items: center;
+    justify-content: center; /* Centreert de navigatielinks */
 }
 
-a {
-    color: #d9534f;
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
     text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
 }
 
-a:hover {
+nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Stijl voor de bestelpagina */
-.menu-section {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 20px auto;
-}
-
-.menu-item {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.menu-item label {
-    font-size: 16px;
-    color: #333;
-}
-
-.menu-item input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-button, .submit-section a {
-    background-color: #d9534f;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-}
-
-button:hover, .submit-section a:hover {
-    background-color: #c9302c;
-}
-
-.submit-section {
-    margin-top: 30px;
-    text-align: center;
-}
-
-/* Footer stijl */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #5bc0de;
-    color: white;
+/* Header tekst styling */
+.header-text {
     position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Stijl voor tabs op de orderpagina */
-.tabs {
-    overflow: hidden;
-    background-color: #f4f4f4;
-    border-bottom: 2px solid #d9534f;
-}
-
-.tab-link {
-    background-color: inherit;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-    display: inline-block;
-}
-
-.tab-link:hover {
-    background-color: #ddd;
-}
-
-.tab-link.active {
-    background-color: #d9534f;
-    color: white;
-}
-
-.tab-content {
-    display: none;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparante achtergrond voor leesbaarheid */
+    border-radius: 10px;
+    z-index: 5; /* Zorgt ervoor dat de tekst boven de achtergrondafbeelding ligt */
 }
 
-/* Stijl voor de samenvatting van de bestelling */
-.order-summary {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 20px auto;
+.header-text h1 {
+    font-size: 36px;
+    margin: 0;
 }
 
-.order-summary h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.order-summary ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.order-summary li {
+.header-text p {
     font-size: 18px;
-    background-color: #f9f9f9;
-    margin: 10px 0;
+    margin: 10px 0 0;
+}
+
+/* Zoekbalk styling */
+.search-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-container input[type="text"] {
     padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    border: 2px solid #cc0000;
     border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.order-summary .total-price {
-    font-weight: bold;
-    font-size: 20px;
-    text-align: right;
-    margin-top: 20px;
-}
-
-/* Stijl voor de "Terug naar bestellen" knop */
-a.back-to-order {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #d9534f;
+.search-container button {
+    padding: 10px 20px;
+    background-color: #cc0000;
     color: white;
-    text-decoration: none;
+    border: none;
     border-radius: 5px;
-    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-a.back-to-order:hover {
-    background-color: #c9302c;
+.search-container button:hover {
+    background-color: #a30000;
+}
+
+/* Product container styling */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f4f4f4; /* Achtergrondkleur van de container */
+}
+
+.product {
+    background-color: #fff6f6; /* Lichte rode tint achtergrondkleur voor producten */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s; /* Overgangseffect voor achtergrondkleur */
+}
+
+.product:hover {
+    background-color: #ffe6e6; /* Nog lichtere tint bij hover */
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #cc0000; /* Rode kleur voor productnaam */
+}
+
+.product p {
+    font-size: 16px;
+    color: #555;
+}
+
+.product button {
+    background-color: #cc0000; /* Rode kleur voor bestelknop */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product button:hover {
+    background-color: #a30000;
 }
