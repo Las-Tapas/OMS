@@ -80,5 +80,6 @@ $products = $query->fetchAll(PDO::FETCH_ASSOC);
     <?php endif; ?>
 </div>
 
+
 </body>
 </html>
