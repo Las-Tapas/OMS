@@ -1,9 +1,10 @@
-/* Basis CSS voor een schone en mooie lay-out */
+/* Voorkom horizontaal scrollen */
 body {
     font-family: Arial, sans-serif;
     background-color: #f7f7f7;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 /* Header en navbar */
@@ -11,7 +12,7 @@ header {
     position: relative;
     background: url('../images/banner.png') no-repeat center center;
     background-size: cover;
-    height: 400px; /* Of een andere hoogte die je geschikt vindt */
+    height: 400px;
     color: white;
 }
 
@@ -21,23 +22,28 @@ header {
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between; /* Zorgt ervoor dat de logo links staat en de nav in het midden */
+    justify-content: space-between;
     padding: 15px 50px;
-    background: rgba(0, 0, 0, 0.4); /* Semi-transparante achtergrond voor leesbaarheid */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Witte rand onder de navbar */
-    z-index: 10; /* Zorgt ervoor dat de navbar boven de header-tekst ligt */
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtiele schaduw voor diepte */
+    z-index: 10;
 }
 
 .logo {
     height: 60px;
-    margin-right: 20px; /* Ruimte tussen logo en navigatie */
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Vergroot het logo met 10% bij hover */
 }
 
 nav {
     flex-grow: 1;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centreert de navigatielinks */
+    justify-content: center;
 }
 
 nav ul {
@@ -45,6 +51,7 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center; /* Zorg dat de items netjes in het midden blijven */
 }
 
 nav ul li {
@@ -56,10 +63,27 @@ nav ul li a {
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #cc0000;
+}
+
+nav ul li a.active {
+    color: #cc0000;
+}
+
+.cart-icon {
+    height: 30px;
+    width: 30px;
+    filter: brightness(0) invert(1); /* Maak de icon wit */
+    transition: transform 0.3s ease;
+    margin-left: 900px; /* Plaats de shopping cart naar rechts */
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
 }
 
 /* Header tekst styling */
@@ -70,9 +94,9 @@ nav ul li a:hover {
     transform: translateX(-50%);
     text-align: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparante achtergrond voor leesbaarheid */
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    z-index: 5; /* Zorgt ervoor dat de tekst boven de achtergrondafbeelding ligt */
+    z-index: 5;
 }
 
 .header-text h1 {
@@ -119,11 +143,11 @@ nav ul li a:hover {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
-    background-color: #f4f4f4; /* Achtergrondkleur van de container */
+    background-color: #f4f4f4;
 }
 
 .product {
-    background-color: #fff6f6; /* Lichte rode tint achtergrondkleur voor producten */
+    background-color: #fff6f6;
     border: 1px solid #ddd;
     border-radius: 10px;
     margin: 10px;
@@ -131,11 +155,11 @@ nav ul li a:hover {
     width: 250px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s; /* Overgangseffect voor achtergrondkleur */
+    transition: background-color 0.3s;
 }
 
 .product:hover {
-    background-color: #ffe6e6; /* Nog lichtere tint bij hover */
+    background-color: #ffe6e6;
 }
 
 .product img {
@@ -147,7 +171,7 @@ nav ul li a:hover {
 .product h3 {
     font-size: 18px;
     margin: 10px 0;
-    color: #cc0000; /* Rode kleur voor productnaam */
+    color: #cc0000;
 }
 
 .product p {
@@ -156,7 +180,7 @@ nav ul li a:hover {
 }
 
 .product button {
-    background-color: #cc0000; /* Rode kleur voor bestelknop */
+    background-color: #cc0000;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -167,4 +191,25 @@ nav ul li a:hover {
 
 .product button:hover {
     background-color: #a30000;
+}
+
+/* Stijl voor de melding */
+#message-box {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: rgba(255, 99, 71, 0.9); /* Mooie rode kleur */
+    color: white;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+#message-box p {
+    margin: 0;
+    font-size: 14px;
 }

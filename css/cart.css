@@ -1,0 +1,137 @@
+/* Voorkom horizontaal scrollen */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Header en navbar */
+header {
+    position: relative;
+    background-size: cover;
+    height: 400px;
+    color: white;
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtiele schaduw voor diepte */
+    z-index: 10;
+}
+
+.logo {
+    height: 60px;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Vergroot het logo met 10% bij hover */
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Zorg dat de items netjes in het midden blijven */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #cc0000;
+}
+
+nav ul li a.active {
+    color: #cc0000;
+}
+
+.cart-icon {
+    height: 30px;
+    width: 30px;
+    filter: brightness(0) invert(1); /* Maak de icon wit */
+    transition: transform 0.3s ease;
+    margin-left: 900px; /* Plaats de shopping cart naar rechts */
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Meldingsbalk styling */
+.alert {
+    background-color: #cc0000;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 10px 0;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Winkelmand container styling */
+.cart-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cart-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-container th, .cart-container td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.cart-container th {
+    background-color: #cc0000;
+    color: white;
+}
+
+.cart-container td {
+    background-color: #fff6f6;
+}
+
+.cart-container td:nth-child(4) {
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
