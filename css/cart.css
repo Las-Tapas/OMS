@@ -10,8 +10,9 @@ body {
 /* Header en navbar */
 header {
     position: relative;
+    background: url('../images/banner.png') no-repeat center center;
     background-size: cover;
-    height: 400px;
+    height: 80px;
     color: white;
 }
 
@@ -21,11 +22,13 @@ header {
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-between; /* Zorg ervoor dat de logo en cart icon aan de zijkanten staan */
     padding: 15px 50px;
     background: rgba(0, 0, 0, 0.5);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtiele schaduw voor diepte */
     z-index: 10;
+    height: 63%;
 }
 
 .logo {
@@ -41,8 +44,7 @@ header {
 nav {
     flex-grow: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: center; /* Center de nav-items */
 }
 
 nav ul {
@@ -78,60 +80,116 @@ nav ul li a.active {
     width: 30px;
     filter: brightness(0) invert(1); /* Maak de icon wit */
     transition: transform 0.3s ease;
-    margin-left: 900px; /* Plaats de shopping cart naar rechts */
+    margin-left: auto; /* Dit zorgt ervoor dat de cart-icon helemaal aan de rechterkant komt */
 }
 
 .cart-icon:hover {
     transform: scale(1.1);
 }
 
-/* Meldingsbalk styling */
-.alert {
-    background-color: #cc0000;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 5px;
-    margin: 10px 0;
-    animation: fadeIn 0.5s ease-out;
-}
-
-/* Winkelmand container styling */
+/* Winkelmand styling */
 .cart-container {
-    padding: 20px;
-    background-color: #fff;
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+    background-color: white;
     border-radius: 10px;
+    padding: 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 0 auto;
+    margin-top: 80px;
 }
 
-.cart-container table {
+.cart-container h2 {
+    font-size: 24px;
+    color: #cc0000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cart-empty-message {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    padding: 20px;
+    font-style: italic;
+}
+
+table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
-.cart-container th, .cart-container td {
-    padding: 10px;
+th, td {
     border: 1px solid #ddd;
+    padding: 10px;
     text-align: center;
+    font-size: 16px;
 }
 
-.cart-container th {
+th {
     background-color: #cc0000;
     color: white;
-}
-
-.cart-container td {
-    background-color: #fff6f6;
-}
-
-.cart-container td:nth-child(4) {
     font-weight: bold;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.cart-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.quantity-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-input {
+    width: 60px;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.update-button {
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.update-button:hover {
+    background-color: #a30000;
+}
+
+.clear-cart-button {
+    background-color: #a30000;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.clear-cart-button:hover {
+    background-color: #8b0000;
+}
+
+/* Totaal styling */
+table tr:last-child td {
+    font-weight: bold;
+    color: #cc0000;
+    font-size: 18px;
 }
