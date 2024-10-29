@@ -12,8 +12,8 @@ header {
     position: relative;
     background: url('../images/banner.png') no-repeat center center;
     background-size: cover;
-    height: 400px;
-    color: white;
+        height: 400px;
+        color: white;
 }
 
 .navbar {
